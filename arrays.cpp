@@ -1,22 +1,24 @@
-
 #include <iostream>
 using namespace std;
 
-// Function to print array elements
-void printArray(int arr[], int size) {
-    cout << "Array elements: ";
-    for(int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
+// Function to find the maximum element in an array
+int findMax(int arr[], int size) {
+    int maxVal = arr[0];
+    for(int i = 1; i < size; i++) {
+        if(arr[i] > maxVal) {
+            maxVal = arr[i];
+        }
     }
-    cout << endl;
+    return maxVal;
 }
 
 int main() {
-    // Creating an array of 5 integers
-    int myArray[5] = {10, 20, 30, 40, 50};
+    int arr[] = {10, 25, 7, 33, 15};
+    int size = sizeof(arr) / sizeof(arr[0]);
 
-    // Printing the array
-    printArray(myArray, 5);
+    int maxElement = findMax(arr, size);
+
+    cout << "Maximum element in the array is: " << maxElement << endl;
 
     return 0;
 }
